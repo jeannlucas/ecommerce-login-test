@@ -6,10 +6,10 @@ Automação de testes E2E para validar o fluxo de login do site DemoBlaze.
 
 ## Tecnologias Utilizadas
 
-• Node.js
-• npm
-• Cypress
-• JavaScript
+- Node.js
+- npm
+- Cypress
+- JavaScript
 
 ---
 
@@ -24,17 +24,17 @@ Automação de testes E2E para validar o fluxo de login do site DemoBlaze.
 
 ```bash
 # Clonar repositório
-git clone git@github.com:jeannlucas/ecommerce-login-test.git
+git clone git@github.com:seu-usuario/ecommerce-login-test.git
 cd ecommerce-login-test
 
 # Instalar dependências
 npm install
 
 # Abrir interface interativa do Cypress
-npx cypress open
+npm run cypress:open
 
 # Executar testes em modo headless
-npx cypress run --spec "cypress/e2e/login.cy.js"
+npm test
 ```
 
 ---
@@ -47,6 +47,7 @@ npx cypress run --spec "cypress/e2e/login.cy.js"
    └─ login.cy.js
 package.json
 cypress.config.js
+.gitignore
 README.md
 ```
 
@@ -71,3 +72,11 @@ Validar o fluxo de login de um usuário no site DemoBlaze, cobrindo cenários de
 ## Critérios de Sucesso
 
 - Todos os cenários de teste devem passar sem erros.
+
+---
+
+## Observações
+
+- Os testes capturam screenshots automaticamente em cada cenário.
+- A configuração do Cypress define `baseUrl`, `viewport` e timeouts para maior estabilidade.
+- Futuramente, a execução pode ser integrada em pipelines de CI/CD.

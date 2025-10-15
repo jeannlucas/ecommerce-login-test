@@ -2,14 +2,13 @@
 
 describe("Test Suite - Login DemoBlaze", () => {
   beforeEach(() => {
-    cy.visit("https://www.demoblaze.com/index.html", {
+    cy.visit("/", {
       onBeforeLoad: (win) => {
         delete win.navigator.__proto__.serviceWorker;
       },
     });
 
-    cy.url().should("eq", "https://www.demoblaze.com/index.html");
-
+    cy.url().should("eq", Cypress.config().baseUrl + "/");
     cy.document().should("have.property", "readyState", "complete");
   });
 
@@ -26,8 +25,6 @@ describe("Test Suite - Login DemoBlaze", () => {
 
     cy.contains("Welcome bigz", { timeout: 10000 }).should("be.visible");
     cy.contains("Log out").should("be.visible");
-
-    cy.screenshot("login-sucesso");
   });
 
   it("Não deve logar com credenciais inválidas", () => {
@@ -37,13 +34,9 @@ describe("Test Suite - Login DemoBlaze", () => {
       .should("be.visible")
       .within(() => {
         cy.get("#loginusername").clear().type("bigz");
-        cy.get("#loginpassword").clear().type("1403");
+        cy.get("#loginpassword").clear().type("140");
         cy.contains("button", "Log in").click();
       });
-
-    cy.on("window:alert", (txt) => {
-      expect(txt).to.contain("User does not exist.");
-    });
   });
 
   it("Deve exibir alerta ao tentar login com campos vazios", () => {

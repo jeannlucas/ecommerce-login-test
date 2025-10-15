@@ -1,10 +1,12 @@
 {
   "name": "exercicio-1",
   "version": "1.0.0",
-  "description": "",
+  "description": "Automação E2E do fluxo de login DemoBlaze com Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run"
   },
   "keywords": [],
   "author": "",
