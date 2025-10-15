@@ -42,13 +42,14 @@ npm test
 ## Estrutura de Pastas
 
 ```
-/cypress
-└─ /e2e
-   └─ login.cy.js
-package.json
-cypress.config.js
-.gitignore
-README.md
+/ecommerce-login-test
+├─ /cypress
+│   └─ /e2e
+│       └─ login.cy.js
+├─ /docs
+│   └─ diagrama-login.png
+├─ README.md
+
 ```
 
 ---
@@ -66,6 +67,14 @@ Validar o fluxo de login de um usuário no site DemoBlaze, cobrindo cenários de
 | Login com sucesso | Preencher credenciais válidas e clicar em "Log in" | Redirecionamento para página inicial com nome do usuário |
 | Senha incorreta   | Preencher senha incorreta e clicar em "Log in"     | Mensagem de erro exibida                                 |
 | Campos vazios     | Clicar em "Log in" sem preencher campos            | Alerta de erro exibido                                   |
+
+---
+
+## Diagrama de Casos de Uso
+
+Abaixo está o diagrama UML representando os principais fluxos do sistema de login testados com Cypress:
+
+<p align="center"> <img src="./docs/diagrama-login.png" width="600" alt="Diagrama de Casos de Uso - Sistema de Login"> </p>
 
 ---
 
